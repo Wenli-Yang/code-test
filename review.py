@@ -1,15 +1,19 @@
 # Review 1
 
-def add_to_list(value, my_list=[]):
-    my_list.append(value)
-
+#def add_to_list(value, my_list=[]): variable potential risks, better to use None
+def add_to_list(value, my_list):    
+    if isinstance(my_list, list):
+        my_list.append(value)
+    else:
+        raise TypeError("my_list must be a list")
     return my_list
 
 
 # Review 2
 
 def format_greeting(name, age):
-    return "Hello, my name is {name} and I am {age} years old."
+    #return "Hello, my name is {name} and I am {age} years old." wrong str input format
+    return f"Hello, my name is {name} and I am {age} years old."
 
 
 # Review 3
@@ -18,10 +22,12 @@ class Counter:
     count = 0
 
     def __init__(self):
-        self.count += 1
+        #self.count += 1
+        Counter.count += 1
 
     def get_count(self):
-        return self.count
+        #return self.count
+        return Counter.count
 
 
 # Review 4
@@ -33,9 +39,11 @@ class SafeCounter:
 
     def __init__(self):
         self.count = 0
+        self.lock = threading.Lock()
 
     def increment(self):
-        self.count += 1
+        with self.lock:
+            self.count += 1
 
 
 def worker(counter):
@@ -49,7 +57,7 @@ threads = []
 
 for _ in range(10):
     t = threading.Thread(target=worker, args=(counter,))
-
+    threads.append(t)
     t.start()
 
     threads.append(t)
@@ -67,7 +75,7 @@ def count_occurrences(lst):
 
         if item in counts:
 
-            counts[item] = + 1
+            counts[item] += 1
 
         else:
 
