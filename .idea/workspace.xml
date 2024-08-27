@@ -4,20 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f18a67d1-8ec9-4e49-bed8-1fafbfd9a743" name="Changes" comment="" />
+    <list default="true" id="317059cf-7991-4c3d-9ca7-7d083bbbd78f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 6
 }]]></component>
-  <component name="ProjectId" id="2l2YhgboYGHf9CxQ2SS2tIbEA2t" />
+  <component name="ProjectId" id="2l2RsJ86cTzyNPldKh9T33yIfW2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -28,11 +38,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f18a67d1-8ec9-4e49-bed8-1fafbfd9a743" name="Changes" comment="" />
-      <created>1724379758815</created>
+      <changelist id="317059cf-7991-4c3d-9ca7-7d083bbbd78f" name="Changes" comment="" />
+      <created>1724376389433</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1724379758815</updated>
+      <updated>1724376389433</updated>
     </task>
     <servers />
   </component>

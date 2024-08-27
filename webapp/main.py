@@ -5,23 +5,20 @@ app = FastAPI()
 
 
 class ConnectionManager:
-
     def __init__(self):
-        # active connections save as list
         self.active_connections: List[WebSocket] = []
-        # usernames save as dict
-        self.usernames: dict[WebSocket, str] = {}
 
-    async def connect(self, websocket: WebSocket, username: str):
+    async def connect(self, websocket: WebSocket):
         await websocket.accept()
         self.active_connections.append(websocket)
-        self.usernames[websocket] = username
+        print(f"New connection: {websocket.client}")
 
     def disconnect(self, websocket: WebSocket):
         self.active_connections.remove(websocket)
-        del self.usernames[websocket]
+        print(f"Connection closed: {websocket.client}")
 
     async def broadcast(self, message: str):
+        print(f"Broadcasting message: {message}")
         for connection in self.active_connections:
             await connection.send_text(message)
 
@@ -31,12 +28,12 @@ manager = ConnectionManager()
 
 @app.websocket("/ws/{username}")
 async def websocket_endpoint(websocket: WebSocket, username: str):
-    await manager.connect(websocket, username)
+    await manager.connect(websocket)
     try:
         while True:
             data = await websocket.receive_text()
-            message = f"{username}: {data}"
-            await manager.broadcast(message)
+            print(f"Received message from {username}: {data}")
+            await manager.broadcast(f"{username}: {data}")
     except WebSocketDisconnect:
         manager.disconnect(websocket)
-        await manager.broadcast(f"{username} has left the chat")
+        await manager.broadcast(f"{username} left the chat")

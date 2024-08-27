@@ -74,7 +74,7 @@ def count_occurrences(lst):
     for item in lst:
 
         if item in counts:
-
+            #counts[item] = counts[item] = + 1 wrong calculation
             counts[item] += 1
 
         else:
